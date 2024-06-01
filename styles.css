@@ -1,0 +1,129 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    font-family: 'Arial', sans-serif;
+}
+
+/* Stopwatch container styling */
+.stopwatch {
+    text-align: center;
+    background: linear-gradient(135deg, #43c6ac 0%, #f8ffae 100%);
+    padding: 20px;
+    position: relative;
+    width: 350px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Unique shape using pseudo-elements */
+.stopwatch::before,
+.stopwatch::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background: inherit;
+    border-radius: 50%;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.stopwatch::after {
+    background: linear-gradient(135deg, #43c6ac 0%, #f8ffae 100%);
+    transform: rotate(-45deg);
+}
+
+/* Title styling */
+h1 {
+    font-size: 2.5em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Time display styling */
+.time-display {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Button container styling */
+.buttons {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Button styling */
+button {
+    padding: 15px 25px;
+    margin: 10px;
+    border: none;
+    border-radius: 30px;
+    background: #ff6f61;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: #ff3b2f;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Lap list styling */
+.laps {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.laps li {
+    background: rgba(255, 255, 255, 0.9);
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 1em;
+}
+
+/* Scrollbar styling */
+.laps::-webkit-scrollbar {
+    width: 8px;
+}
+
+.laps::-webkit-scrollbar-thumb {
+    background: #ff6f61;
+    border-radius: 4px;
+}
+
+.laps::-webkit-scrollbar-thumb:hover {
+    background: #ff3b2f;
+}
